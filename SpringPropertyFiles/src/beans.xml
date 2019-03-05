@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">	
+<!-- 	
+<bean id="placeHolderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="db.properties"/>
+</bean>
+<bean id="dbconfig" class="com.cg.bean.DBConfig">
+<property name="driverName" value="${driver}"></property>
+<property name="url" value="${url}"></property>
+<property name="username" value="${username}"></property>
+<property name="password" value="${password}"></property>
+</bean>
+ -->
+ 
+ 
+<bean id="customEditorConfig" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+<property name="customEditors">
+<map>
+<entry key="java.time.LocalDate" value="com.cg.bean.DateEditor"></entry>
+<entry key="java.util.ArrayList" value="com.cg.bean.ListEditor"></entry>
+</map>
+</property>
+</bean>
+
+<bean id="emp" class="com.cg.bean.Employee">
+<property name="employeeId" value="1011"></property>
+<property name="name" value="komal"></property>
+<property name="salary" value="7894"></property>
+<property name="joinDate" value="01-01-2018"></property>
+<property name="skills" value="c,java,html"></property>
+
+</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
